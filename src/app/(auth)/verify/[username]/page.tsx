@@ -18,12 +18,16 @@ import * as z from "zod";
 
 const verifyAccount = () => {
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const router = useRouter();
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const params = useParams<{ username: string }>();
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { toast } = useToast()
 
 
   //* Zod validation schema implementation
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const form = useForm<z.infer<typeof verifySchema>>({
     resolver: zodResolver(verifySchema),
   });
@@ -50,7 +54,6 @@ const verifyAccount = () => {
         description: axiosError.response?.data.message,
         variant: "destructive"
       })
-
     }
   }
 
